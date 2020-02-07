@@ -38,14 +38,12 @@ public class Hooks {
     }
 
     public void initializeDriver() {
-        System.out.println("bhanu before class =========");
         WebDriverManager.chromedriver().setup();
         WebDriverManager.firefoxdriver().setup();
         WebDriverManager.iedriver().setup();
 
         UrlValidator urlValidator = new UrlValidator();
         url = System.getProperty("url");
-        System.out.println("before cehck url ===> " + url);
         if (!urlValidator.isValid(url)) {
             url = "http://127.0.0.1:8000";
         }
